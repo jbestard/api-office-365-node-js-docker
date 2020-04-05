@@ -1,6 +1,7 @@
 //  database
-import { createConnection } from "typeorm";
-import { typeOrmConfig } from "./database/config";
+// import { createConnection } from "typeorm";
+// import { typeOrmConfig } from "./database/config";
+import Database from "./database/config";
 
 import dotenv from "dotenv";
 import express from "express";
@@ -9,6 +10,8 @@ import http from "http";
 
 import * as routes from "./routes";
 import * as auth from "./routes/auth";
+import * as events from "./routes/events";
+import * as subscriptions from "./routes/subscriptions";
 import * as swaggerDoc from "./swaggerDoc";
 
 const env = dotenv.config().parsed || process.env;
@@ -32,6 +35,8 @@ async function startHTTPServer( app: express.Application )    {
     //  configure routes
     routes.register( app/*, conn*/);
     auth.register( app/*, conn*/);
+    events.register( app/*, conn*/);
+    subscriptions.register( app/*, conn*/);
 
     //  configure middlewares
     swaggerDoc.register( app );

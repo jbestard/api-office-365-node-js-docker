@@ -3,6 +3,7 @@ export default{
     redirect_uri: "http://localhost/",
     client_secret: "9YvdCUzJAzSRsS=z_ByBaFzY7cJ:e3-8",
     scope1: [
+        "profile",
         "openid",
         "offline_access",
         "Calendars.Read",
@@ -16,5 +17,9 @@ export default{
     urls: {
         authorize: "https://login.windows.net/common/oauth2/v2.0/authorize",
         token: "https://login.windows.net/common/oauth2/v2.0/token",
+        calendarview: "https://outlook.office.com/api/v2.0/me/calendarview",
+        subscriptions: "https://outlook.office.com/api/v2.0/me/subscriptions",
+        NotificationURL: "https://authentication-api-nodejs.herokuapp.com/notification",
+        ResourceSubscriptions: "https://outlook.office.com/api/v2.0/me/events"
     }
 };

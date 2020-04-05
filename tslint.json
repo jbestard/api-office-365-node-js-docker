@@ -10,9 +10,9 @@
         "no-var-keyword": false,
         "prefer-const": false,
         "no-console": false,
-        "trailing-comma": [ false ]
-        , "object-literal-sort-keys": false
-        , "align": [false, "parameters"]
+        "trailing-comma": [ false ],
+        "object-literal-sort-keys": false,
+        "align": [false, "parameters"]
     },
     "rulesDirectory": []
 }
