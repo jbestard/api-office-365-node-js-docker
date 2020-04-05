@@ -1,0 +1,38 @@
+version: '3.5'
+
+services:
+  database:
+    container_name: postgres_container
+    image: postgres:9.6
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: changeme
+      POSTGRES_DB: office-sync-db
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    networks:
+      - postgres
+    restart: unless-stopped
+    ports:
+      - "5432:5432"
+  pgadmin:
+    container_name: pgadmin_container
+    image: dpage/pgadmin4
+    ports:
+      - "5058:80"
+    volumes:
+      - pgadmin:/root/.pgadmin
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=developer@officesync.com
+      - PGADMIN_DEFAULT_PASSWORD=changethis
+    networks:
+      - postgres
+    restart: unless-stopped
+
+volumes:
+  postgres:
+  pgadmin:
+
+networks:
+  postgres:
+    driver: bridge
