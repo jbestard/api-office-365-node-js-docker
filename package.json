@@ -28,7 +28,7 @@
     "js-base64": "^2.5.2",
     "jsonwebtoken": "^8.5.1",
     "log4js": "^6.1.2",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.7",
     "pg": "7.18.2",
     "pretty-data": "^0.40.0",
     "querystring": "^0.2.0",
